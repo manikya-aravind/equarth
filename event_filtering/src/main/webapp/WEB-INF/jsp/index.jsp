@@ -36,7 +36,7 @@
         <div class="logo">
           eQarth
           <div class="icon">
-              <i class="fa fa-user" aria-hidden="true" > <a href="#"></a> </i>
+              <i class="fa fa-user" aria-hidden="true" > <a href="LoginPage.jsp"></a> </i>
           </div>
         </div>
 
