@@ -108,7 +108,7 @@
        <div class="logo">
          <a href="index.jsp">eQarth</a>
          <div class="icon">
-             <i class="fa fa-user" aria-hidden="true" style="font-size:36px;"> <a href="#"></a> </i>
+             <i class="fa fa-user" aria-hidden="true" style="font-size:36px;"> <a href="LoginPage.jsp"></a> </i>
          </div>
        </div>
 
