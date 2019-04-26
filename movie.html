@@ -11,32 +11,82 @@
     <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
   </head>
   <style >
+     body{
+         font-family: 'Cabin Sketch', cursive;
+         background-image:url(projector.jpg);
+          background-position: top 80px left 100px;
+          background-color: #45a29e;
+          background-size: 25%;
+     }
+     .headermenu .logo a{
+       text-decoration: none;
+     }
+     header{
+       width: 100%;
+       height:5em;
+       color: white;
+       background-color: black;
+
+     }
+     .icon{
+      float: right;
+      right: 20px;
+     }
+     .logo{
+
+       font-family: 'Fredericka the Great', cursive;
+       font-size: 3.8em;
+     }
+     a{
+       text-decoration: none; /*not working check why*/
+     }
+
 
   </style>
   <body>
     <script type="text/javascript">
        var id = window.location.search;
-        var querypara = id.split("?")[1];
+        var querypara = id.split("/")[4];
+        /*document.write(querypara);*/
     </script>
 
     <header>
       <div class="headermenu">
         <div class="logo">
-          eQarth
+          <a href="index.jsp">eQarth</a>
           <div class="icon">
-              <i class="fa fa-user" aria-hidden="true" style="font-size:36px;"> <a href="index.html"></a> </i>
+             <a href="LoginPage.jsp">  <i class="fa fa-user" aria-hidden="true" style="font-size:36px;"> </i></a>
           </div>
         </div>
       </div>
     </header>
 
 
-
     <div class="display" id="display">
-      <div id="image" ><img width="165px" height="130px" style="position:absolute; top:90px;left:40px;" ></div>
-      <div id="title" style="position:relative; top:170px;font-size:30px;left:40px;">  </div>
-      <div name="desc&trailer" id="trailer" style="position:relative; top:200px;font-size:18px;left:30px;">   </div>
-      <button type="button" name="button" style="position:relative; top:380px;left:40px;background-color:#f44336;color: black;border-radius: 12px;padding: 15px 32px;"><a href="book.html">Book now</a></button>
+
+           <div id="title" style="position:relative; top:170px;font-size:50px;left:40px;font-weight:bold;">
+                    <mark style="color:#4B0082;background-color:#87CEEB;">hello
+                    </mark>
+            </div>
+
+            <div>
+                    <img width="165px" height="130px" style="position:absolute; top:90px;left:40px;" >
+            </div>
+
+            <div class="genre" style="position:relative; top:180px;font-size:18px;left:30px;">
+              Genre:
+            </div>
+
+            <div id="trailer" style="position:relative; top:200px;font-size:18px;left:30px;">
+                    <iframe src="" width="100%" height="100">  </iframe>
+            </div>
+
+            <div id="synopsis" style="position:relative; top:230px;font-size:30px;left:30px;font-weight:bold;">
+                    <mark style="color:#4B0082;background-color:#87CEEB;">hello
+                    </mark>
+            </div>
+
+            <button type="button" name="button" style="position:relative; top:380px;left:40px;background-color:#f44336;color: black;border-radius: 12px;padding: 15px 32px;"><a href="book.html">Book now</a></button>
     </div>
 
 
