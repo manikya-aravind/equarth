@@ -4,7 +4,7 @@
  <head>
   <title>Search event</title>
 
-  <%
+ <%
 	String url = request.getRequestURL().toString();
 	String baseUrl = url.substring(0, url.length() - request.getRequestURI().length())
 			+ request.getContextPath() + "/";
@@ -24,9 +24,15 @@
   <!--ddata-->
   <script src="script/jquery-1.8.1.min.js" type="text/javascript"></script>
   <style>
+
   body{
-    height: 1000px;
-    background-color: #45a29e;
+    margin: 0;
+    padding: 0;
+    height:auto;
+    background-color: #45A29E;
+    background-size:cover;
+    font-family: 'Cabin Sketch', cursive;
+
   }
    /*header*/
     header{
@@ -34,18 +40,38 @@
       height:4.5em;
       color: white;
       background-color: black;
+
+    }
+    .headermenu .logo a{
+        text-decoration: none;
+        color: white;
     }
     .icon{
-     float: right;
-     right: 20px;
+     float: right
     }
     .logo{
       font-family: 'Fredericka the Great', cursive;
       font-size: 2.8em;
     }
-    a{
-      text-decoration: none; /*not working check why*/
+
+    .mov h1 a{
+      text-decoration: none;
+      color: white;
     }
+    .sports h1 a{
+      text-decoration: none;
+      color: white;
+    }
+    .drama h1 a{
+      text-decoration: none;
+      color: white;
+    }
+    .standup h1 a{
+      text-decoration: none;
+      color: white;
+    }
+
+
   /*search*/
   #result {
    position: absolute;
@@ -73,25 +99,28 @@
    var id = window.location.search;
     var querypara = id.split("/")[1];
 </script>
-   <header>
+
+     <header>
      <div class="headermenu">
        <div class="logo">
-         <a href="index.jsp">eQarth</a>
+         <a href="index.html">eQarth</a>
          <div class="icon">
              <i class="fa fa-user" aria-hidden="true" style="font-size:36px;"> <a href="#"></a> </i>
          </div>
        </div>
      </div>
    </header>
-  <div class="container" style="width:400px;float:right;">
+
+  <div class="container" style="position: relative;top:10px; display: grid;width:400px;float:center">
    <br /><br />
-   <div align="right">
+   <div align="left">
     <input type="text" name="search" id="search" placeholder="Search here" class="form-control" />
    </div>
    <ul class="list-group" id="result"></ul>
    <br />
   </div>
-  <!--  <script>
+    <!--
+ <script>
   $(document).ready(function(){
    $.ajaxSetup({ cache: false });
    $('#search').keyup(function(){
@@ -117,10 +146,10 @@
   </script>
   -->
   <br><br><br><br>
-       <h1>Upcoming</h1>
-       <div class="bar">
+       <h1 style="color:white">Upcoming</h1>
+       <div class="bar" style="display: grid;">
          <c:forEach var="city" items="${listci}">
-         <div><img src="<%=baseUrl%>/resources/Images/${city.poster}" width="1330px" height="290px"/>  <a href="#"></a> </div>
+         <div><img src="<%=baseUrl%>/resources/Images/${city.poster}"  height="290px" width="100%" style=" max-width: 100% "/>  <a href="#"></a> </div>
          </c:forEach>
        </div>
        <br><br>
@@ -141,30 +170,34 @@
        });
        </script>
 <!-- Movies -->
-<h1><a onclick='javascript:allEvent(this.id);'>Movies</a></h1>
+
   <div class="mov" id="mov">
     <h1><a onclick='javascript:allEvent(this.id);'>Movies</a></h1>
-    <select class="movielist" name="movielist" id="movcat">
+    <select class="movielist" name="movielist" id="movcat"  style="position:absolute ;right:20px;">
+
+      <option value="dots" id="dots">...</option>
       <option value="romantic" id="romantic" onclick='javascript:nextPage(this.id);'>Romantic</option>
       <option value="comedy" id="comedy" onclick='javascript:nextPage(this.id);'>Comedy</option>
       <option value="action" id="action" onclick='javascript:nextPage(this.id);'>Action</option>
       <option value="scifithrill" id="scifithrill" onclick='javascript:nextPage(this.id);'>Sci-fi & thriller</option>
       <option value="horror" id="horror" onclick='javascript:nextPage(this.id);'>Horror</option>
       <option value="animation" id="animation" onclick='javascript:nextPage(this.id);'>Animation</option>
-      <option value="" id=""></option>
+
     </select>
 
 
-    <div class="slidemov">
-      <div><img src="" width="165px" height="130px" onclick='javascript:individualEvent(this.id)';/>  </div>
-
+    <div class="slidemov" style="width: 100%;max-width: 100%";>
+      <div><img src="" width="165px" height="130px" onclick='javascript:individualEvent(this.id)';/>
+        <br>name of the event goes here
+      </div>
     </div>
 </div>
 
 <div class="sports" id="sports">
   <h1><a onclick='javascript:allEvent(this.id);'>Sports</a></h1>
-  <select class="sportlist" name="sportlist" id="sportcat">
-    <option value="football" id="football" onclick='javascript:nextPage(this.id);'>/Football</option>
+  <select class="sportlist" name="sportlist" id="sportcat" style="position:absolute ;right:20px; ">
+    <option value="dots" id="dots">...</option>
+    <option value="football" id="football" onclick='javascript:nextPage(this.id);'>Football</option>
     <option value="cricket" id="cricket" onclick='javascript:nextPage(this.id);'>Cricket</option>
     <option value="tt" id="tt" onclick='javascript:nextPage(this.id);'>Table tennis</option>
     <option value="hockey" id="hockey" onclick='javascript:nextPage(this.id);'>Hockey</option>
@@ -172,60 +205,43 @@
     <option value="kabaddi" id="kabaddi" onclick='javascript:nextPage(this.id);'>Kabaddi</option>
 
   </select>
-  <div class="slidemov">
-    <div><img src="" width="165px" height="130px" onclick='javascript:individualEvent(this.id)'/>  <a href="#"></a> </div>
+  <div class="slidemov" style="width: 100%;max-width: 100%";>
+    <div><img src="" width="165px" height="130px" onclick='javascript:individualEvent(this.id)'/>
+      <br>name of the event goes here
+     </div>
 
 </div>
-
-
-<div class="food" id="food">
-  <h1><a onclick='javascript:allEvent(this.id);'>Food</a></h1>
-  <select class="foodlist" name="foodlist" id="foodcat">
-    <option value="chinese" id="chinese" onclick='javascript:nextPage(this.id);'>/Chinese</option>
-    <option value="nindian" id="nindian" onclick='javascript:nextPage(this.id);'>North Indian</option>
-    <option value="sindian" id="sindian" onclick='javascript:nextPage(this.id);'>South Indian</option>
-    <option value="chaats" id="chaats" onclick='javascript:nextPage(this.id);'>Chaats</option>
-
-  </select>
-  <div class="slidemov">
-    <div><img src="" width="165px" height="130px" onclick='javascript:individualEvent(this.id)'/>  <a href="#"></a> </div>
 
 </div>
 
 <div class="drama" id="drama">
   <h1><a onclick='javascript:allEvent(this.id);'>Drama</a></h1>
-  <select class="dramalist" name="dramalist" id="dramacat">
-     <option value="comedy" id="comedy" onclick='javascript:nextPage(this.id);'>/Comedy</option>
+  <select class="dramalist" name="dramalist" id="dramacat"  style="position:absolute ;right:20px;">
+    <option value="dots" id="dots">...</option>
+     <option value="comedy" id="comedy" onclick='javascript:nextPage(this.id);'>Comedy</option>
      <option value="mime" id="mime" onclick='javascript:nextPage(this.id);'>Mime</option>
-     <option value="melo" id="melo" onclick='javascript:nextPage(this.id);'>Melo drama</option>
+     <option value="melodrama" id="melodrama" onclick='javascript:nextPage(this.id);'>Melo drama</option>
     </select>
-  <div class="slidemov">
-    <div><img src="" width="165px" height="130px" onclick='javascript:individualEvent(this.id)'/>  <a href="#"></a> </div>
+
+  <div class="slidemov" style="width: 100%;max-width: 100%";>
+    <div><img src="" width="165px" height="130px" onclick='javascript:individualEvent(this.id)'/>
+       <br>name of the event goes here
+     </div>
 
   </div>
 </div>
 
-<div class="concert" id="concert">
-  <h1><a onclick='javascript:allEvent(this.id);'>Concert</a></h1>
-  <select class="conlist" name="conlist" id="concat">
-     <option value="rock" id="rock" onclick='javascript:nextPage(this.id);'>Rock</option>
-     <option value="pop" id="pop" onclick='javascript:nextPage(this.id);'>Pop</option>
-     <option value="classical" id="classical" onclick='javascript:nextPage(this.id);'> Classical</option>
-    </select>
-  <div class="slidemov">
-    <div ><img src="" width="165px" height="130px" onclick='javascript:individualEvent(this.id)'/>  <a href="#"></a> </div>
-
-  </div>
-</div>
 
 <div class="standup" id="standup">
   <h1><a onclick='javascript:allEvent(this.id);'>Stand-up</a></h1>
 
-  <div class="slidemov">
-    <div><img src="" width="165px" height="130px" onclick='javascript:individualEvent(this.id)'/>  <a href="#"></a> </div>
+  <div class="slidemov" style="width: 100%;max-width: 100%";>
+    <div><img src="" width="165px" height="130px" onclick='javascript:individualEvent(this.id)'/>
+        <br>name of the event goes here
+    </div>
 
   </div>
-</div>,
+</div>
 
  <!--all categories-->
 
@@ -254,7 +270,7 @@
       }
     </script>
 
-    <!--individual page-->
+    <!--individual event page-->
     <script type="text/javascript">
      function individualEvent(id){
        window.location="movie.jsp?"+id;
@@ -262,8 +278,6 @@
     </script>
 
 <br><br><br>
-
-
 
  </body>
 </html>

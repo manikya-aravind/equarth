@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Choose city</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+           jQuery(window).load(function(){
+               jQuery(".popcorn-loader-overlay").fadeOut(1000);
+           });
+       </script>
+
+    <noscript>
+      <style>.popcorn-loader-overlay { display: none; } </style>
+    </noscript>
+
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Overlock" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+
+
+  </head>
+
+  <body>
+
+    <div class="popcorn-loader-overlay"></div>
+
+    <header>
+      <div class="headermenu">
+        <div class="logo">
+          eQarth
+          <div class="icon">
+              <i class="fa fa-user" aria-hidden="true" > <a href="#"></a> </i>
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+<br>
+     <h1>What's new</h1>
+     <div class="bar">
+
+       <div><img src="css/tir.png"/> <a href="#"></a></div>
+       <div><img src="css/tir.png"/> <a href="#"></a></div>
+       <div><img src="css/tir.png"/> <a href="#"></a></div>
+     </div>
+     <br><br>
+
+<h1>Select your city</h1>
+<br><br>
+
+     <div class="container">
+       <div class="column active">
+          <div class="content">
+            <div id="blr" onclick='javascript:nextPage(this.id);'>
+
+                  <p> <img src="css/vid.png" height="70px" width="70px">
+                  <br>
+                  Bengaluru</p>
+              </div>
+             <div class="box">   </div>
+          </div>
+         <div class="bg bg1">  </div>
+       </div>
+
+       <div class="column">
+         <div class="content">
+           <div id="hyd" onclick='javascript:nextPage(this.id);'>
+
+               <p> <img  src="css/hyder.png" height="70px" width="70px"  >
+               <br>
+               Hyderabad</p>
+            </div>
+           <div class="box">   </div>
+         </div>
+         <div class="bg bg2">  </div>
+       </div>
+
+
+       <div class="column">
+           <div class="content">
+             <div id="tir" onclick='javascript:nextPage(this.id);'>
+
+                 <p> <img src="css/tiru.png" height="70px" width="70px" >
+                 <br>
+                  Trivandram</p>
+                </div>
+             <div class="box">  </div>
+           </div>
+              <div class="bg bg3"> </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <div id="che" onclick='javascript:nextPage(this.id);'>
+
+                <p><img src="css/chennai.png" height="70px" width="70px"> </p>
+                <br><br><br><br>
+                Chennai
+             </div>
+            <div class="box">  </div>
+          </div>
+          <div class="bg bg4">  </div>
+        </div>
+  </div>
+
+
+<h1>Trending</h1><br>
+  <div class="trend">
+
+    <div><img src="css/tir.png" width="220px" height="280px" onclick="movie.jsp" />
+           name of the movie here  name of the movie here
+    </div>
+
+  </div>
+
+     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+     <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+     <script type="text/javascript" src="slick/slick.min.js"></script>
+
+
+     <script type="text/javascript">
+       $(document).on('mouseover','.container .column' ,function(){
+         $(this).addClass('active').siblings().removeClass('active')
+       })
+     </script>
+
+     <!--whats new-->
+
+     <script type="text/javascript">
+     $(document).ready(function(){
+     $('.bar').slick({
+     arrows: false,
+     autoplay: true,
+     autoplaySpeed: 800,
+     dots: true
+     });
+     });
+     </script>
+
+   <!--trending-->
+
+
+   <script type="text/javascript">
+
+   $('.trend').slick({
+   slidesToShow: 5,
+   slidesToScroll: 1,
+   autoplay: true,
+   autoplaySpeed: 800
+   });
+
+     </script>
+     <!--city-->
+     <script type="text/javascript">
+      function nextPage(id){
+        window.location="search.html?"+id;
+       }
+ </script>
+  </body>
+</html>
