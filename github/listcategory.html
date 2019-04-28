@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+           jQuery(window).load(function(){
+               jQuery(".popcorn-loader-overlay").fadeOut(1000);
+           });
+       </script>
+
+    <noscript>
+      <style>.popcorn-loader-overlay { display: none; } </style>
+    </noscript>
+    <!--icons & fonts-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+
+      <style >
+      *{
+        padding: 0;
+        margin: 0
+      }
+         body{
+             font-family: 'Cabin Sketch', cursive;
+             background-image:url(projector.jpg);
+              background-position: top 80px left 100px;
+              background-color: #45a29e;
+              background-size: 25%;
+         }
+         header{
+           width: 100%;
+           height:4.5em;
+           color: white;
+           background-color: black;
+
+         }
+         .headermenu .logo a{
+             text-decoration: none;
+             color: white;
+         }
+         .icon{
+          float: right
+         }
+         .logo{
+           font-family: 'Fredericka the Great', cursive;
+           font-size: 2.8em;
+         }
+         .list .card{
+           margin-left: 10px;
+           margin-right: 10px;
+           margin-top: 50px;
+         }
+         .popcorn-loader-overlay {
+             width: 100%;
+             height: 100%;
+             background: url('popcorn.gif') center no-repeat #FFF;
+             z-index: 99999;
+             position: fixed;
+         }
+      </style>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+       var id = window.location.search;
+        var querypara = id.split("?")[1];
+    </script>
+
+    <div class="popcorn-loader-overlay"></div>
+
+    <header>
+      <div class="headermenu">
+        <div class="logo">
+          <a href="index.html">eQarth</a>
+          <div class="icon">
+              <i class="fa fa-user" aria-hidden="true" style="font-size:36px;"> <a href="#"></a> </i>
+          </div>
+        </div>
+      </div>
+    </header>
+<br><br>
+
+<div class="categories">
+
+</div>
+
+<script type="text/javascript">
+
+</script>
+<!--for loop with the id querypara-->
+    <div class ="list" id="list">
+
+       <div class="card">
+          <img src="" alt="" style="height:130px;width:165px" onclick='javascript:individualEvent()'><!--name of the movie-->
+
+       </div>
+
+    </div>
+
+<!--individual page-->
+<script type="text/javascript">
+ function individualEvent(id){ <!--name of the movie-->
+   window.location="movie.jsp?"+id;
+  }
+</script>
+  </body>
+</html>

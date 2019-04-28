@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Event</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+           jQuery(window).load(function(){
+               jQuery(".popcorn-loader-overlay").fadeOut(1000);
+           });
+       </script>
+
+    <noscript>
+      <style>.popcorn-loader-overlay { display: none; } </style>
+    </noscript>
+
+
+    <!--fonts and icons-->
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+  </head>
+  <style >
+  *{
+    padding: 0;
+    margin: 0
+  }
+     body{
+         font-family: 'Cabin Sketch', cursive;
+         background-image:url(projector.jpg);
+          background-position: top 80px left 100px;
+          background-color: #45a29e;
+          background-size: 25%;
+     }
+     header{
+       width: 100%;
+       height:4.5em;
+       color: white;
+       background-color: black;
+
+     }
+     .headermenu .logo a{
+         text-decoration: none;
+         color: white;
+     }
+     .icon{
+      float: right
+     }
+     .logo{
+       font-family: 'Fredericka the Great', cursive;
+       font-size: 2.8em;
+     }
+     .popcorn-loader-overlay {
+         width: 100%;
+         height: 100%;
+         background: url('popcorn.gif') center no-repeat #FFF;
+         z-index: 99999;
+         position: fixed;
+     }
+
+
+  </style>
+  <body>
+
+
+
+    <script type="text/javascript">
+       var id = window.location.search;
+        var querypara = id.split("/")[4];
+        /*document.write(querypara);*/
+    </script>
+
+   <div class="popcorn-loader-overlay"></div>
+
+    <header>
+      <div class="headermenu">
+        <div class="logo">
+          <a href="index.jsp">eQarth</a>
+          <div class="icon">
+             <a href="LoginPage.jsp">  <i class="fa fa-user" aria-hidden="true" style="font-size:36px;"> </i></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+    <div class="display" id="display">
+
+           <div id="title" style="position:absolute; top:90px;font-size:50px;left:40px;">
+                    <mark style="color:#f9e79f;background-color:black ;">hello
+                    </mark>
+            </div> <br><br>
+
+            <div>
+                    <img width="165px" height="130px" style="position:absolute; top:160px;left:40px;" >
+            </div>
+
+            <div class="genre" style="position:relative; top:195px;font-size:22px;left:40px;">
+              <mark style="color:#f9e79f;background-color:black ;">
+                Genre:
+              </mark>
+              <mark style="color:white;background-color:black;font-size:22px;">
+                //link to be added here
+              </mark>
+            </div>
+
+              <br>
+
+            <div class="cast" style="position:relative; top:200px;font-size:22px;left:40px;">
+              <mark style="color:#f9e79f;background-color:black ;">
+                Cast:
+              </mark>
+              <mark style="color:white;background-color:black;font-size:22px;">
+                //link to be added here
+              </mark>
+            </div>
+
+            <div id="trailer" style="position:relative; top:210px;left:40px;">
+                    <iframe src="" width="100%" height="100">  </iframe>
+            </div>
+
+            <div id="synopsis" style="position:relative; top:240px;left:40px;">
+                    <mark style="color:#f9e79f;background-color:black;font-size:30px;">
+                      Synopsis
+                    </mark>
+                    <br><br>
+                    <p><mark style="color:white;background-color:black;font-size:22px;">
+                      //link to be added here
+                    </mark></p>
+
+            </div>
+
+            <button type="button" name="button" style="position:relative; top:380px;left:40px;background-color:#f9e79f ;color: black;border-radius: 12px;padding: 15px 32px;">
+              <a onclick='javascript:nextPage'>Book now</a>
+            </button>
+    </div>
+<script type="text/javascript">
+  function nextPage(){
+    if (sessionStorage.getItem('status') != null))
+       window.location="showtimes.jsp";
+    }
+    else{
+      window.location="LoginPage.jsp";
+   }
+  }
+</script>
+
+
+  </body>
+</html>
