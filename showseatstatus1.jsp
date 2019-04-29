@@ -22,6 +22,15 @@
       </noscript>
 
       <style>
+      *{
+        padding: 0;
+        margin: 0;
+        background-size: cover;
+      }
+      body{
+        font-family: 'Cabin Sketch',cursive;
+        background-color: #45A29E;
+      }
       .popcorn-loader-overlay {
           width: 100%;
           height: 100%;
@@ -29,56 +38,16 @@
           z-index: 99999;
           position: fixed;
       }
-      a{
-        text-decoration: none;
-        color: black;
-      }
-
-      *{
-        padding: 0;
-        margin: 0;
-        background-size: cover;
-
-      }
-
-      header{
-        width: 100%;
-        height:6em;
-        color: white;
-        background-color: black;
-
-      }
-      .icon{
-       float: right;
-       right: 20px;
-      }
-      .logo{
-
-        font-family: 'Fredericka the Great', cursive;
-        font-size: 3.8em;
-      }
       .row{
         font-family:'Cabin Sketch', cursive;
       }
-      body{
-        background-color: #45A29E;
-      }
+
       </style>
   </head>
   <body>
-    <!-- <div class="popcorn-loader-overlay"></div> -->
+     <div class="popcorn-loader-overlay"></div>
 
-      <header>
-        <div class="headermenu">
-          <div class="logo">
-            eQarth
-            <div class="icon">
-                <i class="fa fa-user" aria-hidden="true" > <a href="#"></a> </i>
-            </div>
-          </div>
 
-        </div>
-      </header>
     <%@page import="com.amazon.model.Show"%>
 <div class="row" style="background-color:rgba(176, 218, 208, 0.16)">
 
@@ -88,8 +57,9 @@
 
 	<hr>
 		<div class="seatscontainer">
-			<span class="screen">Screen</span>
+			<span class="screen" align="center">Screen</span>
 			<br/><br/>
+        <mark style="background-color:white;">
 			<%
 				String url = request.getRequestURL().toString();
 				String baseUrl = url.substring(0, url.length() - request.getRequestURI().length())
@@ -98,6 +68,7 @@
 				String seatstatus = s.getSeat_status();
 				out.print("<form action='" + baseUrl + "payment' method='get'>");
 				int jmax;
+
 				for (int i = 0, k = 0; i < 8; i++) {
 
 					out.print("<span class='vertical rownumber'>S"+i+"</span>");
@@ -129,11 +100,13 @@
 					out.print("<br/>");
 
 				}
+
 				out.print("<hr>");
 				out.print("<input type='hidden' name='show_id' value='" + s.getShow_id() + "'>");
-				out.print("<input type='submit' value='Book Seats'>");
-			%>
+				out.print("<input type='submit' value='Book Seats'");
 
+			%>
+     </mark>
 		</div>
 
 	</div>
