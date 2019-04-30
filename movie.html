@@ -2,53 +2,73 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <!--style sheet-->
-    <link rel="stylesheet" href="css/movie.css">
+    <title>Event</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+           jQuery(window).load(function(){
+               jQuery(".popcorn-loader-overlay").fadeOut(1000);
+           });
+       </script>
+
+    <noscript>
+      <style>.popcorn-loader-overlay { display: none; } </style>
+    </noscript>
+
+
     <!--fonts and icons-->
     <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
   </head>
   <style >
-     body{
-         font-family: 'Cabin Sketch', cursive;
-         background-image:url(projector.jpg);
-          background-position: top 80px left 100px;
-          background-color: #45a29e;
-          background-size: 25%;
-     }
-     .headermenu .logo a{
-       text-decoration: none;
-     }
-     header{
-       width: 100%;
-       height:5em;
-       color: white;
-       background-color: black;
+  *{
+    padding: 0;
+    margin: 0;
+    background-size: cover;
+  }
+  body{
+    font-family: 'Cabin Sketch';
+  }
+  header{
+    width: 100%;
+    height:65px;
+    color: white;
+    background-color: black;
 
-     }
-     .icon{
-      float: right;
-      right: 20px;
-     }
-     .logo{
-
-       font-family: 'Fredericka the Great', cursive;
-       font-size: 3.8em;
-     }
-     a{
-       text-decoration: none; /*not working check why*/
+  }
+  .headermenu .logo a{
+      text-decoration: none;
+      color: white;
+  }
+  .icon{
+   float: right
+  }
+  .logo{
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 45px;
+  }
+     .popcorn-loader-overlay {
+         width: 100%;
+         height: 100%;
+         background: url('popcorn.gif') center no-repeat #FFF;
+         z-index: 99999;
+         position: fixed;
      }
 
 
   </style>
   <body>
+
+
+
     <script type="text/javascript">
        var id = window.location.search;
         var querypara = id.split("/")[4];
         /*document.write(querypara);*/
     </script>
+
+   <div class="popcorn-loader-overlay"></div>
 
     <header>
       <div class="headermenu">
@@ -64,31 +84,64 @@
 
     <div class="display" id="display">
 
-           <div id="title" style="position:relative; top:170px;font-size:50px;left:40px;font-weight:bold;">
-                    <mark style="color:#4B0082;background-color:#87CEEB;">hello
+           <div id="title" style="position:absolute; top:90px;font-size:50px;left:40px;">
+                    <mark style="color:#f9e79f;background-color:black ;">hello
                     </mark>
-            </div>
+            </div> <br><br>
 
             <div>
-                    <img width="165px" height="130px" style="position:absolute; top:90px;left:40px;" >
+                    <img width="165px" height="130px" style="position:absolute; top:160px;left:40px;" >
             </div>
 
-            <div class="genre" style="position:relative; top:180px;font-size:18px;left:30px;">
-              Genre:
+            <div class="genre" style="position:relative; top:195px;font-size:22px;left:40px;">
+              <mark style="color:#f9e79f;background-color:black ;">
+                Genre:
+              </mark>
+              <mark style="color:white;background-color:black;font-size:22px;">
+                //link to be added here
+              </mark>
             </div>
 
-            <div id="trailer" style="position:relative; top:200px;font-size:18px;left:30px;">
+              <br>
+
+            <div class="cast" style="position:relative; top:200px;font-size:22px;left:40px;">
+              <mark style="color:#f9e79f;background-color:black ;">
+                Cast:
+              </mark>
+              <mark style="color:white;background-color:black;font-size:22px;">
+                //link to be added here
+              </mark>
+            </div>
+
+            <div id="trailer" style="position:relative; top:210px;left:40px;">
                     <iframe src="" width="100%" height="100">  </iframe>
             </div>
 
-            <div id="synopsis" style="position:relative; top:230px;font-size:30px;left:30px;font-weight:bold;">
-                    <mark style="color:#4B0082;background-color:#87CEEB;">hello
+            <div id="synopsis" style="position:relative; top:240px;left:40px;">
+                    <mark style="color:#f9e79f;background-color:black;font-size:30px;">
+                      Synopsis
                     </mark>
+                    <br><br>
+                    <p><mark style="color:white;background-color:black;font-size:22px;">
+                      //link to be added here
+                    </mark></p>
+
             </div>
 
-            <button type="button" name="button" style="position:relative; top:380px;left:40px;background-color:#f44336;color: black;border-radius: 12px;padding: 15px 32px;"><a href="book.html">Book now</a></button>
+            <button type="button" name="button" style="position:relative; top:380px;left:40px;background-color:#f9e79f ;color: black;border-radius: 12px;padding: 15px 32px;">
+              <a onclick='javascript:nextPage'>Book now</a>
+            </button>
     </div>
-
+<script type="text/javascript">
+  function nextPage(){
+    if (sessionStorage.getItem('status') != null))
+       window.location="showtimes.jsp";
+    }
+    else{
+      window.location="LoginPage.jsp";
+   }
+  }
+</script>
 
 
   </body>

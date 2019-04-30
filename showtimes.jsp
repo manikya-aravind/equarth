@@ -87,7 +87,7 @@
 
 
 	<table border="1" class="center">
-	    <tr><th>Venue_id</th><th>Venue_name</th></tr>
+	    <tr ><th>Venue_id</th><th>Venue_name</th></tr>
 
 	    <c:forEach var="v" items="${listv}">
 			<tr>
